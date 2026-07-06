@@ -1,6 +1,7 @@
 import useOnlineStatus from "./hooks/useOnlineStatus";
 import Offline from "./components/Offline";
 import InstallPrompt from "./components/InstallPrompt";
+import { AlertTriangleIcon } from "./components/icons";
 import "./App.css";
 
 // Desktop/laptop browsers already surface connectivity in their own UI chrome;
@@ -12,21 +13,27 @@ function App() {
 
   return (
     <div className="app">
+      <header className="app-bar">
+        <div className="app-bar__brand">
+          <img src="/vuna-192x192.png" alt="" className="app-bar__icon" />
+          <span className="app-bar__name">Vuna POS</span>
+        </div>
+        <span className="app-bar__status">
+          <span className={`app-bar__dot${isOnline ? "" : " app-bar__dot--offline"}`} />
+          {isOnline ? "Online" : "Offline"}
+        </span>
+      </header>
+
       {!isOnline && isAndroid && (
         <div className="status-banner" role="status">
-          ⚠️ You're offline — some features may be unavailable
+          <AlertTriangleIcon />
+          You're offline — some features may be unavailable
         </div>
       )}
 
       {isOnline ? (
         <div className="home">
-          <img src="/vuna-192x192.png" alt="" className="home__icon" />
-          <h1>Vuna POS</h1>
           <p>All features are available.</p>
-          <span className="status-pill">
-            <span className="status-dot" />
-            Online
-          </span>
         </div>
       ) : (
         <Offline />

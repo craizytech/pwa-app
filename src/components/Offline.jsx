@@ -1,9 +1,9 @@
+import { WifiOffIcon } from "./icons";
+
 function Offline() {
   return (
     <div className="offline-screen">
-      <span className="offline-screen__icon" aria-hidden="true">
-        🔌
-      </span>
+      <WifiOffIcon />
       <h1>You're offline</h1>
       <p>Check your internet connection — some features may still work from cache.</p>
       <button className="btn btn--primary" onClick={() => window.location.reload()}>

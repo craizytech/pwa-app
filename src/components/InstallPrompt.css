@@ -1,7 +1,7 @@
 .install-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(8, 6, 13, 0.45);
+  background: rgba(0, 0, 0, 0.45);
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -17,12 +17,12 @@
   width: 100%;
   max-width: 420px;
   box-sizing: border-box;
-  background: var(--bg);
-  color: var(--text);
-  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--ink-2);
+  border: 1px solid var(--outline-1);
   border-bottom: none;
-  border-radius: 20px 20px 0 0;
-  box-shadow: var(--shadow);
+  border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+  box-shadow: var(--shadow-lg);
   padding: 12px 20px calc(20px + env(safe-area-inset-bottom, 0px));
   animation: install-slide-up 0.28s cubic-bezier(0.32, 0.72, 0, 1);
 }
@@ -34,8 +34,8 @@
 @media (min-width: 640px) {
   .install-sheet {
     margin-bottom: 24px;
-    border-radius: 20px;
-    border-bottom: 1px solid var(--border);
+    border-radius: var(--radius-2xl);
+    border-bottom: 1px solid var(--outline-1);
   }
 }
 
@@ -43,7 +43,7 @@
   width: 36px;
   height: 4px;
   border-radius: 2px;
-  background: var(--border);
+  background: var(--outline-2);
   margin: 0 auto 16px;
 }
 
@@ -61,9 +61,9 @@
 }
 
 .install-sheet__icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
   flex-shrink: 0;
   box-shadow: var(--shadow);
 }
@@ -73,23 +73,23 @@
 }
 
 .install-sheet__title {
-  font-family: var(--heading);
+  font-family: var(--sans);
   font-weight: 600;
-  font-size: 16px;
-  color: var(--text-h);
+  font-size: 14px;
+  color: var(--ink-1);
   margin: 0 0 2px;
 }
 
 .install-sheet__subtitle {
-  font-size: 14px;
-  line-height: 135%;
+  font-size: 13px;
+  line-height: 1.4;
   margin: 0;
-  color: var(--text);
+  color: var(--ink-3);
 }
 
 .install-sheet__actions {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   margin-top: 18px;
 }
 
