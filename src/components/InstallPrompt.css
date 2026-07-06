@@ -1,0 +1,161 @@
+.install-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 6, 13, 0.45);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 2000;
+  animation: install-fade-in 0.25s ease;
+}
+
+.install-backdrop--closing {
+  animation: install-fade-out 0.25s ease forwards;
+}
+
+.install-sheet {
+  width: 100%;
+  max-width: 420px;
+  box-sizing: border-box;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-bottom: none;
+  border-radius: 20px 20px 0 0;
+  box-shadow: var(--shadow);
+  padding: 12px 20px calc(20px + env(safe-area-inset-bottom, 0px));
+  animation: install-slide-up 0.28s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.install-sheet--closing {
+  animation: install-slide-down 0.25s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+}
+
+@media (min-width: 640px) {
+  .install-sheet {
+    margin-bottom: 24px;
+    border-radius: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+.install-sheet__handle {
+  width: 36px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border);
+  margin: 0 auto 16px;
+}
+
+@media (min-width: 640px) {
+  .install-sheet__handle {
+    display: none;
+  }
+}
+
+.install-sheet__content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+}
+
+.install-sheet__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  box-shadow: var(--shadow);
+}
+
+.install-sheet__text {
+  min-width: 0;
+}
+
+.install-sheet__title {
+  font-family: var(--heading);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-h);
+  margin: 0 0 2px;
+}
+
+.install-sheet__subtitle {
+  font-size: 14px;
+  line-height: 135%;
+  margin: 0;
+  color: var(--text);
+}
+
+.install-sheet__actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.install-sheet__btn {
+  flex: 1;
+  font: inherit;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: opacity 0.15s ease, background-color 0.15s ease;
+}
+
+.install-sheet__btn--ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.install-sheet__btn--ghost:hover {
+  background: var(--code-bg);
+}
+
+.install-sheet__btn--primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.install-sheet__btn--primary:hover {
+  opacity: 0.9;
+}
+
+@keyframes install-slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes install-slide-down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes install-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes install-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
