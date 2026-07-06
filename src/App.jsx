@@ -20,8 +20,8 @@ function App() {
 
       {isOnline ? (
         <div className="home">
-          <img src="/pwa-192x192.png" alt="" className="home__icon" />
-          <h1>My First PWA</h1>
+          <img src="/vuna-192x192.png" alt="" className="home__icon" />
+          <h1>Vuna POS</h1>
           <p>All features are available.</p>
           <span className="status-pill">
             <span className="status-dot" />

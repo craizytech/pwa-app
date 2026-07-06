@@ -47,8 +47,8 @@ export default defineConfig({
         ]
       },
       manifest: {
-        name: 'Test PWA App',
-        short_name: 'PWA App',
+        name: 'Vuna POS',
+        short_name: 'Vuna POS',
         description: 'testing progress',
         start_url: '/',
         theme_color: '#ffffff',
@@ -56,12 +56,12 @@ export default defineConfig({
         display: 'standalone',
         icons: [
           {
-            src: 'pwa-192x192.png',  // Small icon
+            src: 'vuna-192x192.png',  // Small icon
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: 'pwa-512x512.png',  // Large icon
+            src: 'vuna-512x512.png',  // Large icon
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any maskable'  // Works in various environments
