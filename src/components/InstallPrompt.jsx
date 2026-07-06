@@ -116,9 +116,9 @@ function InstallPrompt() {
         <div className="install-sheet__handle" />
 
         <div className="install-sheet__content">
-          <img src="/pwa-192x192.png" alt="" className="install-sheet__icon" />
+          <img src="/vuna-192x192.png" alt="" className="install-sheet__icon" />
           <div className="install-sheet__text">
-            <p className="install-sheet__title">Install PWA App</p>
+            <p className="install-sheet__title">Install Vuna POS</p>
             <p className="install-sheet__subtitle">
               Add it to your home screen for a faster, full-screen experience.
             </p>
