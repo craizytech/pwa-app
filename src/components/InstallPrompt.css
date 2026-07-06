@@ -95,33 +95,6 @@
 
 .install-sheet__btn {
   flex: 1;
-  font: inherit;
-  font-weight: 600;
-  font-size: 15px;
-  padding: 12px 16px;
-  border-radius: 12px;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: opacity 0.15s ease, background-color 0.15s ease;
-}
-
-.install-sheet__btn--ghost {
-  background: transparent;
-  border-color: var(--border);
-  color: var(--text);
-}
-
-.install-sheet__btn--ghost:hover {
-  background: var(--code-bg);
-}
-
-.install-sheet__btn--primary {
-  background: var(--accent);
-  color: #fff;
-}
-
-.install-sheet__btn--primary:hover {
-  opacity: 0.9;
 }
 
 @keyframes install-slide-up {

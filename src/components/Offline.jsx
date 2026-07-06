@@ -1,28 +1,13 @@
-
 function Offline() {
   return (
-    <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: '100vh',
-      textAlign: 'center',
-      padding: '20px'
-    }}>
-      <h1>🔌 Offline Mode</h1>
-      <p>Please check your internet connection.</p>
-      <p>Some features are still available offline.</p>
-      <button 
-        onClick={() => window.location.reload()}
-        style={{
-          marginTop: '20px',
-          padding: '10px 20px',
-          fontSize: '16px',
-          cursor: 'pointer'
-        }}
-      >
-        Try Again
+    <div className="offline-screen">
+      <span className="offline-screen__icon" aria-hidden="true">
+        🔌
+      </span>
+      <h1>You're offline</h1>
+      <p>Check your internet connection — some features may still work from cache.</p>
+      <button className="btn btn--primary" onClick={() => window.location.reload()}>
+        Try again
       </button>
     </div>
   );

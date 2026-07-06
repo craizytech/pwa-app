@@ -128,14 +128,14 @@ function InstallPrompt() {
         <div className="install-sheet__actions">
           <button
             type="button"
-            className="install-sheet__btn install-sheet__btn--ghost"
+            className="btn btn--ghost install-sheet__btn"
             onClick={handleDismiss}
           >
             Not now
           </button>
           <button
             type="button"
-            className="install-sheet__btn install-sheet__btn--primary"
+            className="btn btn--primary install-sheet__btn"
             onClick={handleInstall}
           >
             Install

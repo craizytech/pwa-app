@@ -1,39 +1,37 @@
-
 import useOnlineStatus from "./hooks/useOnlineStatus";
 import Offline from "./components/Offline";
 import InstallPrompt from "./components/InstallPrompt";
+import "./App.css";
+
+// Desktop/laptop browsers already surface connectivity in their own UI chrome;
+// the in-app banner is only useful on Android, where nothing else shows it.
+const isAndroid = /android/i.test(navigator.userAgent);
 
 function App() {
   const isOnline = useOnlineStatus();
-  
+
   return (
-    <div className="App">
-      {/* Online status banner */}
-      {!isOnline && (
-        <div style={{
-          position: 'fixed',
-          top: 0,
-          width: '100%',
-          backgroundColor: '#ff6b6b',
-          color: 'white',
-          padding: '10px',
-          textAlign: 'center',
-          zIndex: 1000
-        }}>
-          ⚠️ You are currently offline
+    <div className="app">
+      {!isOnline && isAndroid && (
+        <div className="status-banner" role="status">
+          ⚠️ You're offline — some features may be unavailable
         </div>
       )}
-      
-      {/* Show Offline component when offline */}
-      {!isOnline ? (
-        <Offline />
-      ) : (
-        <>
+
+      {isOnline ? (
+        <div className="home">
+          <img src="/pwa-192x192.png" alt="" className="home__icon" />
           <h1>My First PWA</h1>
-          <p>You're online! All features are available.</p>
-          {/* Add the rest of your app content here */}
-        </>
+          <p>All features are available.</p>
+          <span className="status-pill">
+            <span className="status-dot" />
+            Online
+          </span>
+        </div>
+      ) : (
+        <Offline />
       )}
+
       <InstallPrompt />
     </div>
   );
